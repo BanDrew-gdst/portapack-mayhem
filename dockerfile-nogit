@@ -10,7 +10,7 @@ VOLUME /havoc
 WORKDIR /havoc/firmware
 
 # Fetch dependencies from APT
-RUN apt-get update && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 	apt-get install -y git tar wget dfu-util cmake python3 ccache bzip2 curl && \
 	apt-get -qy autoremove
 
